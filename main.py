@@ -15,6 +15,8 @@ OUTPUT_PATH = Path("/output/entry.txt")
 
 
 def main() -> None:
+    if not 1 <= len(JOKE) <= 200:
+        raise ValueError("entry line must be 1-200 characters")
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT_PATH.write_text(JOKE, encoding="utf-8")
 
